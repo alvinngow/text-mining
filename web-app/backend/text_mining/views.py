@@ -72,4 +72,21 @@ class LDAView(APIView):
             'untuned_prob' : untuned_topic,
             'best_prob':best_topic,
         }
+        print(res)
         return Response(res, status=status.HTTP_200_OK)
+
+class SAView(APIView):
+        def get(self, request, *args, **kwargs):
+            print("asouidh")
+            sentence = request.GET.get("sentence")
+            log = None
+            svc = None
+
+            with open('log_pred.pk','rb') as f:
+                log = pickle.load(f)
+            with open('svc.pk','rb') as f:
+                svc = pickle.load(f)
+
+            
+            return Response('ok', status=status.HTTP_200_OK)
+

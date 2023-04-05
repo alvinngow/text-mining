@@ -20,4 +20,5 @@ from text_mining import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('lda_demo/', views.LDAView.as_view()),
+    path('sa_demo/', views.SAView.as_view()),
 ]
