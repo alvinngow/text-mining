@@ -7,6 +7,12 @@ name = "pypi"
 django = "*"
 djangorestframework = "*"
 django-cors-headers = "*"
+sklearn = "*"
+pandas = "*"
+scikit-learn = "*"
+nltk = "*"
+validators = "*"
+demoji = "*"
 
 [dev-packages]
 
