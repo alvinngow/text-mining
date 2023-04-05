@@ -19,5 +19,5 @@ from text_mining import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('test/', views.TestView.as_view()),
+    path('lda_demo/', views.LDAView.as_view()),
 ]
