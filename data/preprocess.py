@@ -11,25 +11,25 @@ lemmatizer = WordNetLemmatizer()
 
 import gensim
 # open csv, convert to txt, return corpus
-# def load_corpus(dir, text_column):
-#     for file in os.listdir(dir):
-#         if file.endswith(".csv"):
-#             csv_path = os.path.join(dir, file)
-#             txt_path = os.path.splitext(csv_path)[0] + ".txt"  # use same name as CSV file but with .txt extension
-#             with open(txt_path, "w") as output:
-#                 df = pd.read_csv(csv_path)
-#                 for sentence in df[text_column]:
-#                     output.write(str(sentence) + "\n") 
-#     corpus = PlaintextCorpusReader(dir, '.+\.txt',)
+def load_corpus(dir, text_column):
+    for file in os.listdir(dir):
+        if file.endswith(".csv"):
+            csv_path = os.path.join(dir, file)
+            txt_path = os.path.splitext(csv_path)[0] + ".txt"  # use same name as CSV file but with .txt extension
+            with open(txt_path, "w") as output:
+                df = pd.read_csv(csv_path)
+                for sentence in df[text_column]:
+                    output.write(str(sentence) + "\n") 
+    corpus = PlaintextCorpusReader(dir, '.+\.txt',)
 
-#     return corpus
+    return corpus
 
 # open csv, convert to txt, return corpus
 
-def load_corpus(dir):
-    # dir is a directory with plain text files to load.
-    corpus = nltk.corpus.PlaintextCorpusReader(dir, '.+\.txt')
-    return corpus
+# def load_corpus(dir):
+#     # dir is a directory with plain text files to load.
+#     corpus = nltk.corpus.PlaintextCorpusReader(dir, '.+\.txt')
+#     return corpus
 
 def corpus2docs(corpus):
     # corpus is a object returned by load_corpus that represents a corpus.
